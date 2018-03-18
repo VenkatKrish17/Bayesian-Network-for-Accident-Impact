@@ -1,0 +1,23 @@
+dvlat
+dvlong
+dvenergy
+othrwt
+PDOF
+GAD1
+MANUSE
+
+related // 
+how ?
+
+lat & long ~ GAD1 & PDOF and vice versa.. 
+we removed both missing values together in both the columns
+so if we know one the other can be predicted. 
+sine wave.. so our usual LM wont work.. 
+
+othr vehicle weight, and my vehicle weight -> energy too
+so all are interrealted.. 
+so a predictive model which finds the matching values and puts the mean..
+i.e pmm method
+
+available in mice package.. 
+
