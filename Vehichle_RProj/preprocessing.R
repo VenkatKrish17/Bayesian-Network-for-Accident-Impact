@@ -203,14 +203,10 @@ nrow(vehicle[is.na(vehicle$GV_ENERGY) & is.na(vehicle$GV_OTVEHWGT) &is.na(vehicl
 
 
 
-md.pattern(vehicle)
+#md.pattern(vehicle)
 imputeddata<-mice(data = vehicle, m=5, maxit=20, method = 'pmm')
-
-summary(vehicle)
-summary(vehicle$GV_CURBWGT)
-newaggregatedmeans<-aggregate(GV_CURBWGT~GV_WGTCDTR, data=vehicle, mean)
-print(table(is.na(vehicle$GV_CURBWGT)))
-table(vehicle$OA_AGE)
-nrow(vehicle[is.na(vehicle$VE_GAD1),])
+completed<-complete(imputeddata,1)
+write.csv(completed,file="../cleanseddata.csv")
+summary(completed)
 
 
